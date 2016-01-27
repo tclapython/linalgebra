@@ -30,7 +30,12 @@ class Vector(object):
         new_coordinates = [x-y for x,y in zip(self.coordinates, v.coordinates)]
         return Vector(new_coordinates)
 
-    def __mul__(self, v):
-        new_coordinates = [x*y for x,y in zip(self.coordinates, v.coordinates)]
+#    def __mul__(self, v):
+#        new_coordinates = [x*y for x,y in zip(self.coordinates, v.coordinates)]
+#        return Vector(new_coordinates)
+
+    def times_scalar(self, scalar):
+        new_coordinates = [scalar * x for x in self.coordinates]
         return Vector(new_coordinates)
+
 
