@@ -38,4 +38,7 @@ class Vector(object):
 
     def magnitude(self):
         return math.sqrt(sum([x*x for x in self.coordinates]))
-    
+ 
+    def normalize(self):
+        return [x / self.magnitude() for x in self.coordinates]
+  
