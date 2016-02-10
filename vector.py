@@ -38,7 +38,16 @@ class Vector(object):
 
     def magnitude(self):
         return math.sqrt(sum([x*x for x in self.coordinates]))
- 
-    def normalize(self):
-        return [x / self.magnitude() for x in self.coordinates]
-  
+        # teacher's version
+        # coordinates_squared = [x**2 for x in self.coordinates] 
+        # return math.sqrt(sum(coordinates_squared))
+
+    def normalized(self):
+        # MY version
+        # return [x / self.magnitude() for x in self.coordinates]
+        try:
+            magnitude = self.magnitude()
+            return self.times_scalar(1./magnitude)
+       
+        except ZeroDivisionError:
+            raise Exception('Cannot normalize the zero vector') 
